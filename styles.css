@@ -111,6 +111,11 @@ body {
 
 
 
+.form_images,
+.paragraphs {
+    display: flex;
+    justify-content: space-between;
+}
 
 
 /* --------------------------------------------------Login Form */
@@ -127,25 +132,31 @@ body {
     height: 50px;
 }
 
-.rectangle {
-    flex: 1;
+#new-user {
+    width: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    cursor: pointer;
     font-size: 14px;
     color: white;
     background-color: var(--my-grey);
 }
 
-.chosen-rectangle {
+#existing-user {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    color: white;
     background-color: var(--my-green);
     font-weight: bold;
 }
 
-form {
+#form-1{
     padding: 30px;
 }
+
 
 .label_inputs {
     display: flex;
@@ -168,6 +179,14 @@ form {
     border-radius: 2.5px;
 }
 
+.options{
+    height: 30px;
+}
+
+.options:hover {
+    background-color: rgb(191, 235, 218);
+}
+
 #go_to {
     width: 195px;
     padding-left: 5px;
@@ -187,6 +206,7 @@ form {
     height: 17px;
     width: 17px;
 }
+
 
 #button_div {
     display: flex;
@@ -220,10 +240,64 @@ form {
 }
 
 
+/*--------------------------------------Add styles for the new user form*/
+.form2{
+    display: none;
+}
+/* .form1{
+    display: none;
+} */
 
+.new-user-form{
+    padding-top: 20px;
+}
 
+.enter-id-label{
+    margin-left: 30px;
+    margin-top: 20px;
+    font-size: 12px;
+    color: white;
+}
 
+.enter-id-input{
+    margin-left: 30px;
+    margin-top: 20px;
+    height: 40px;
+    width: 240px;
+}
 
+.choices{
+    margin-left: 30px;
+    margin-top: 20px;
+    margin-bottom: 66px;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+.new-user-form-choices{
+    font-size: 14px;
+    text-decoration: underline;
+    margin-right: 20px;
+    color: white;
+}
+
+.g-recaptcha{
+    margin-top: 20px;
+    margin-left: 30px;
+}
+.continue-button{
+    background-color: var(--my-green);
+    color: white;
+    border: none;
+    border-radius: 3px;
+    font-size: 14px;
+    padding: 10px 15px;
+    cursor: pointer;
+    margin-top: 25px;
+    margin-left: 20px;
+    width: 110px;
+}
 
 /* ------------------------------------- Add styles for the image viewer */
 .image-viewer {
@@ -231,14 +305,15 @@ form {
     text-align: end;
 }
 
-.first_image {
+#first-image{
     width: 100%;
-}
-
-.form_images,
-.paragraphs {
-    display: flex;
-    justify-content: space-between;
+    height: 408px;
+    display: inline;
+} 
+#second-image{
+    width: 100%;
+    height: 408px;
+    display: none;
 }
 
 #two_circles {
@@ -320,6 +395,7 @@ form {
 }
 
 .bank-info {
+    width: 100%;
     color: var(--dark-blue);
     font-size: 14px;
     text-align: center;

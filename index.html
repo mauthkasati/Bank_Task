@@ -3,10 +3,13 @@
 
 <head>
     <meta charset="UTF-8">
+    <!-- <meta http-equiv="refresh" content="2"> -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="styles.css">
     <title>Riyad Online</title>
     <link rel="icon" href="images/logo.png" sizes="100*100">
+    <!-- <script src="https://www.google.com/recaptcha/enterprise.js?render=6Lf5gRopAAAAAG0l0HM37AGtKvBMW2DRXyCRrLSo" async defer></script> -->
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 
 <body>
@@ -30,54 +33,73 @@
         <div class="form_images">
             <div class="login-form">
                 <div class="user-type">
-                    <div class="rectangle chosen-rectangle"><span>Existing User</span></div>
-                    <div class="rectangle"><span>New User</span></div>
+                    <div id="existing-user" onclick="goToExistingUserForm()"><span>Existing User</span></div>
+                    <div id="new-user" onclick="goToNewUserForm()"><span>New User</span></div>
                 </div>
-                <form>
-                    <div class="label_inputs">
-                        <label class="labels" for="userID">User ID / Name</label>
-                        <input class="inputs" type="text" required>
+                <form id="form-1" class="form1">
+                    <div class="label_inputs form1">
+                        <label class="labels form1" for="userID">User ID / Name</label>
+                        <input class="inputs form1" type="text" required>
                     </div>
-                    <div class="label_inputs">
-                        <label class="labels" for="password">Password</label>
-                        <input class="inputs" type="password" id="password" required>
+                    <div class="label_inputs form1">
+                        <label class="labels form1" for="password">Password</label>
+                        <input class="inputs form1" type="password" id="password" required>
                     </div>
-                    <div class="label_inputs">
-                        <label class="labels" for="go_to">Go to</label>
-                        <select class="inputs" id="go_to">
-                            <option value="welcomePage">Welcome Page</option>
-                            <option value="accountsOverview">Accounts Overview</option>
-                            <option value="billPayment">Bill Payment</option>
-                            <option value="transfer">Transfer</option>
-                            <option value="governmentServices">Government Services</option>
-                            <option value="hassadReward">Hassad Reward Program</option>
+                    <div class="label_inputs form1">
+                        <label class="labels form1" for="go_to">Go to</label>
+                        <select class="inputs form1" id="go_to">
+                            <option class="options form1" value="welcomePage">Welcome Page</option>
+                            <option class="options form1" value="accountsOverview">Accounts Overview</option>
+                            <option class="options form1" value="billPayment">Bill Payment</option>
+                            <option class="options form1" value="transfer">Transfer</option>
+                            <option class="options form1" value="governmentServices">Government Services</option>
+                            <option class="options form1" value="hassadReward">Hassad Reward Program</option>
                         </select>
                     </div>
-                    <div class="remember-me">
-                        <input type="checkbox" id="rememberMe">
-                        <label id="" for="rememberMe">Remember Me</label>
+                    <div class="remember-me form1">
+                        <input class="form1" type="checkbox" id="rememberMe">
+                        <label class="form1" for="rememberMe">Remember Me</label>
                     </div>
-                    <div id="button_div">
-                        <button class="login-button" type="submit">Login</button>
+                    <div class="form1" id="button_div">
+                        <button class="login-button  form1" type="submit">Login</button>
                     </div>
                 </form>
-                <div class="forgot-links">
+                <div class="forgot-links form1">
                     <a href="#">Forgot User ID</a>
                 </div>
-                <div class="forgot-links">
+                <div class="forgot-links form1">
                     <a href="#">Forgot Password</a>
                 </div>
+
+
+                <div class="new-user-form form2">
+                    <label class="enter-id-label form2">Please enter your National ID / IQAMA / GCC</label>
+                    <input class="enter-id-input form2" type="text" required>
+
+                    <div class="g-recaptcha form2" data-sitekey="6Lf5gRopAAAAAG0l0HM37AGtKvBMW2DRXyCRrLSo"></div>
+
+                    <div id="flex_choices" class="choices form2">
+                        <P class="new-user-form-choices form2">Clear</P>
+                        <P class="new-user-form-choices form2">Reload Captcha</P>
+                        <div id="button_div2 form2">
+                            <button class="continue-button form2" type="submit">continue</button>
+                        </div>
+                    </div>
+                </div>
+
+
             </div>
+        
             <div class="image-viewer">
-                <img class="first_image" src="./images/first_image.png" alt="First Image">
-                <!-- <img src="./images/second_image.png" alt="Second Image"> -->
+                <img id="first-image" src="./images/first_image.png" alt="First Image">
+                <img id="second-image" src="./images/second_image.png" alt="Second Image">
                 <!-- <div class="navigation-arrows">
                         <div class="arrow left-arrow">&lt;</div>
                         <div class="arrow right-arrow">&gt;</div>
                     </div> -->
                 <div id="two_circles">
-                    <div id="circle1"></div>
-                    <div id="circle2"></div>
+                    <div id="circle1" onclick="changeToFirstImage()"></div>
+                    <div id="circle2" onclick="changeToSecondImage()"></div>
                 </div>
             </div>
         </div>
@@ -88,14 +110,17 @@
                 <div class="title">TUTORIAL VIDEOS</div>
                 <p class="video-paragraph">A set of videos to help you learn about almost anything related to our
                     Digital Banking.<br>
-                    To view the tutorial videos, please <a href="https://www.youtube.com/playlist?list=PLUDSKq9f9SgFgcN8fqNuvahKrYZBLtsoT" target="_blank" class="green-text">click here</a>.</p>
+                    To view the tutorial videos, please <a
+                        href="https://www.youtube.com/playlist?list=PLUDSKq9f9SgFgcN8fqNuvahKrYZBLtsoT" target="_blank"
+                        class="green-text">click here</a>.</p>
             </div>
             <div class="fraud-section">
                 <div class="title">FRAUD AWARENESS AND SECURITY TIP</div>
                 <p class="fraud-paragraph">Riyad Online banking system is committed to protect your personal banking
                     information, as well as your privacy.
                     The following link provides more information about fraud awareness and security measures, please <a
-                        href="https://www.riyadonline.com/store/fraudAwareness.html" target="_blank" class="green-text">click here</a>.<br>
+                        href="https://www.riyadonline.com/store/fraudAwareness.html" target="_blank"
+                        class="green-text">click here</a>.<br>
                     When accessing your online banking accounts make sure to logout once your transactions are
                     completed.</p>
             </div>
@@ -118,6 +143,7 @@
             13241-7279, www.riyadbank.com, is licensed by the Council of Ministers Resolution (91) dated 23.11.1957,
             and regulated by Saudi Central Bank.</p>
     </div>
+    <script src="script.js"></script>
 </body>
 
 </html>
