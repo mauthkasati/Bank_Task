@@ -300,9 +300,41 @@ body {
 }
 
 /* ------------------------------------- Add styles for the image viewer */
+
 .image-viewer {
     overflow: hidden;
-    text-align: end;
+    text-align: center;
+    position: relative;
+}
+
+.left-arrow,
+.right-arrow {
+    font-size: 40px;
+    color: black;
+    background-color: rgba(0, 0, 0, 0.05);
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    position: absolute;
+    top: 42%;
+    transform: translateY(-50%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+/* Position the arrows */
+.left-arrow {
+    left: 0;
+}
+
+.right-arrow {
+    right: 0;
+}
+
+/* Show the arrows on hover */
+.image-viewer:hover .left-arrow,
+.image-viewer:hover .right-arrow {
+    opacity: 1;
 }
 
 #first-image{
